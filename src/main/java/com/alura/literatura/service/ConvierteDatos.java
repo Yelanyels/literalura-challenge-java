@@ -1,0 +1,18 @@
+package com.alura.literatura.service;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class ConvierteDatos implements IConvierteDatos {
+    private ObjectMapper objectMapper = new ObjectMapper();
+
+    @Override
+    public <T> T obtenerDatos(String json, Class<T> clase) {
+        try {
+            // Este método de Jackson es el que hace la magia
+            return objectMapper.readValue(json, clase);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException("Error al transformar el JSON: " + e.getMessage());
+        }
+    }
+}
