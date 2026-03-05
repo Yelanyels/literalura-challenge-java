@@ -9,7 +9,6 @@ import java.util.List;
 @Repository
 public interface AutorRepository extends JpaRepository<Autor, Long> {
 
-    // Consulta derivada para encontrar autores vivos en un año específico
     // Busca: nacimiento <= año Y (fallecimiento >= año O fallecimiento es nulo)
     List<Autor> findByNacimientoLessThanEqualAndFallecimientoGreaterThanEqual(Integer anioNacimiento, Integer anioFallecimiento);
 }

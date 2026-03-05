@@ -9,9 +9,9 @@ import java.util.List;
 @Repository
 public interface LibroRepository extends JpaRepository<Libro, Long> {
 
-    // Derived Query para contar libros por idioma (Requisito Cartilla 10)
+    // Derived Query para contar libros por idioma
     Long countByIdioma(String idioma);
 
-    // Opcional: Si deseas listar también usando el repositorio en lugar de streams manuales
+
     List<Libro> findByIdiomaIgnoreCase(String idioma);
 }

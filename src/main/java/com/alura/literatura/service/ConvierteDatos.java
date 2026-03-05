@@ -9,7 +9,7 @@ public class ConvierteDatos implements IConvierteDatos {
     @Override
     public <T> T obtenerDatos(String json, Class<T> clase) {
         try {
-            // Este método de Jackson es el que hace la magia
+
             return objectMapper.readValue(json, clase);
         } catch (JsonProcessingException e) {
             throw new RuntimeException("Error al transformar el JSON: " + e.getMessage());

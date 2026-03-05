@@ -19,7 +19,7 @@ public class Principal {
     private ConvierteDatos conversor = new ConvierteDatos();
     private final String URL_BASE = "https://gutendex.com/books/";
     private LibroRepository repository;
-    private AutorRepository autorRepository; // Inyectamos el repositorio de autores
+    private AutorRepository autorRepository;
 
     public Principal(LibroRepository repository, AutorRepository autorRepository) {
         this.repository = repository;
@@ -112,7 +112,7 @@ public class Principal {
             var entrada = lectura.nextLine();
             var anio = Integer.parseInt(entrada);
 
-            // REQUISITO CARTILLA 11: Uso de Derived Query en el repositorio
+
             List<Autor> autoresVivos = autorRepository
                     .findByNacimientoLessThanEqualAndFallecimientoGreaterThanEqual(anio, anio);
 

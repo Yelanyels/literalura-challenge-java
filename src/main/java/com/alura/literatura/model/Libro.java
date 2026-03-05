@@ -34,7 +34,7 @@ public class Libro {
             DatosAutor datosAutor = datosLibro.autor().get(0);
             this.autor = new Autor(datosAutor);
 
-            // Mantenemos estos campos para tus métodos de consola actuales
+
             this.nombreAutor = datosAutor.nombre();
             this.nacimientoAutor = datosAutor.fechaDeNacimiento();
             this.fallecimientoAutor = datosAutor.fechaDeFallecimiento();

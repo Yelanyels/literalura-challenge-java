@@ -14,7 +14,7 @@ public class LiteraturaApplication implements CommandLineRunner {
     @Autowired
     private LibroRepository repository;
 
-    @Autowired // Inyectamos el repositorio de autores para la Cartilla 11
+    @Autowired
     private AutorRepository autorRepository;
 
     public static void main(String[] args) {
@@ -23,7 +23,7 @@ public class LiteraturaApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        // Pasamos ambos repositorios al constructor de Principal
+
         Principal principal = new Principal(repository, autorRepository);
         principal.muestraElMenu();
     }
